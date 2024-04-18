@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the User class."""
+"""This is the user class"""
 from models.base_model import BaseModel, Base
 from models.place import Place
 from models.review import Review
@@ -8,17 +8,12 @@ from sqlalchemy.orm import relationship, backref
 
 
 class User(BaseModel, Base):
-    """Represents a user in the application.
-
+    """This is the class for user
     Attributes:
-        email (str): The email address of the user.
-        password (str): The password for user login.
-        first_name (str): The first name of the user.
-        last_name (str): The last name of the user.
-        places (relationship): Relationship with the Place model.
-        Includes cascade delete to delete associated places.
-        reviews (relationship): Relationship with the Review model.
-        Includes cascade delete to delete associated reviews.
+        email: email address
+        password: password for you login
+        first_name: first name
+        last_name: last name
     """
     __tablename__ = "users"
     email = Column(String(128), nullable=False)
