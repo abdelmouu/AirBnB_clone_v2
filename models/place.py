@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
-"""This is the place class"""
-=======
+
 """Defines the Place class."""
->>>>>>> b037452f67be4e587df226ba99a895be5d5b4980
+
 from models.base_model import BaseModel, Base
 from models.review import Review
 from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
