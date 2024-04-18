@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """This is the place class"""
+=======
+"""Defines the Place class."""
+>>>>>>> b037452f67be4e587df226ba99a895be5d5b4980
 from models.base_model import BaseModel, Base
 from models.review import Review
 from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
@@ -26,6 +30,7 @@ place_amenity = Table(
 
 
 class Place(BaseModel, Base):
+<<<<<<< HEAD
     """This is the class for Place
     Attributes:
         city_id: city id
@@ -39,6 +44,28 @@ class Place(BaseModel, Base):
         latitude: latitude in flaot
         longitude: longitude in float
         amenity_ids: list of Amenity ids
+=======
+    """Represents a place in the application.
+
+    Attributes:
+        city_id (str): The ID of the city where the place is located.
+        user_id (str): The ID of the user who owns the place.
+        name (str): The name of the place.
+        description (str): A description of the place.
+        number_rooms (int): The number of rooms in the place.
+        number_bathrooms (int): The number of bathrooms in the place.
+        max_guest (int): The maximum number of
+        guests the place can accommodate.
+        price_by_night (int): The price per night for staying at the place.
+        latitude (float): The latitude coordinate of the place.
+        longitude (float): The longitude coordinate of the place.
+        reviews (relationship): Relationship with the Review model.
+        Includes cascade delete to delete associated reviews.
+        amenities (relationship): Relationship with the Amenity
+        model through a many-to-many table.
+        Includes a backref to access places associated
+        with each amenity.
+>>>>>>> b037452f67be4e587df226ba99a895be5d5b4980
     """
     __tablename__ = "places"
 
@@ -67,4 +94,7 @@ class Place(BaseModel, Base):
             if pl_reviews.place_id == self.id:
                 list_reviews.append(pl_reviews)
         return list_reviews
+<<<<<<< HEAD
 
+=======
+>>>>>>> b037452f67be4e587df226ba99a895be5d5b4980
